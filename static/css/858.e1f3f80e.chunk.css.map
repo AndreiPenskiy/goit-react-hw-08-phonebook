@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/858.e1f3f80e.chunk.css","mappings":"AAAA,UAEE,aAAc,CADd,iBAEF,CAEA,GACE,eACF,CAEA,YAEE,cACF","sources":["views/styles/Contacts.css"],"sourcesContent":[".Contacts {\n  text-align: center;\n  margin: 0 auto;\n}\n\nul {\n  list-style: none;\n}\n\ninput,\nlabel {\n  cursor: pointer;\n}\n"],"names":[],"sourceRoot":""}
