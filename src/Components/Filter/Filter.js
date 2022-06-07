@@ -1,8 +1,9 @@
 import React from "react";
-import { Label } from "./Filter.styled";
 import { getFilter } from 'redux/contacts/contact-selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/contacts/contacts-actions';
+import { Box, Container, InputAdornment, TextField } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Filter() {
 
@@ -11,13 +12,35 @@ export default function Filter() {
 
 
   return (
-    <Label>
-      Find contacts by Name
-      <input onChange={e => dispatch(filterContacts(e.currentTarget.value))} type="text" name="filter" value={filter}/>
-    </Label>
+    <>
+      <Container>
+       <Box
+          sx={{
+            marginTop: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+      <TextField
+        margin="normal"
+        size="small"
+        id="filter"
+        label="Find contacts by name"
+            name="filter"
+            value={filter}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+        onChange={e => dispatch(filterContacts(e.currentTarget.value))}
+      />
+      </Box>
+    </Container>
+    </>
+    
   );
-}
-
-
-
-
+};

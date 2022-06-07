@@ -5,9 +5,13 @@ import { fetchCurrentUser } from 'redux/auth/auth-options';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import { PublicRoute } from './Routes/PublicRoute';
 import { getCurrentRefresh } from 'redux/auth/auth-selectors';
+import { Toaster } from 'react-hot-toast';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import CommonCss from './CommonCss/CommonCss';
+
 import Loader from './Loader/Loader';
 
-const AppBar = lazy(() => import('./AppBar'));
+const AppBar = lazy(() => import('./AppBar/AppBar'));
 const ContactsView = lazy(() => import('views/ContactsView'));
 const RegisterView = lazy(() => import('views/RegisterView'));
 const LoginView = lazy(() => import('views/LoginView'));
@@ -25,9 +29,11 @@ export default function App() {
 
   return (
     !refresh && (
-      <div>
+      <>
         <Suspense fallback={<Loader />}>
+          <GlobalStyles styles={CommonCss}/>
           <AppBar />
+          <Toaster />
           <Routes>
             <Route>
               <Route index element={<HomePageView />} />
@@ -59,7 +65,7 @@ export default function App() {
             </Route>
           </Routes>
         </Suspense>
-      </div>
+      </>
     )
   );
 };

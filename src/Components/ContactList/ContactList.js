@@ -2,7 +2,13 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchContacts, removeContact } from 'redux/contacts/contacts-operations';
 import { getFilterContacts } from 'redux/contacts/contact-selectors';
-import { Item, Button } from "./ContactList.styled";
+import { Name, Number, Container, List } from "./ContactList.styled";
+import DeleteIcon from '@mui/icons-material/Delete';
+import {
+  Grid,
+  IconButton,
+  ListItem,
+} from '@mui/material';
 
 export const ContactList = () => {
  
@@ -14,22 +20,34 @@ export const ContactList = () => {
   }, [dispatch]);
 
   return (
-    <ul>
+    <Container>
+      <List>
+        <Grid
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       {contacts.map(({ id, name, number }) => (
-        <Item key={id}>
-          <p>
-            {name}: {number}
-          </p>
+        <ListItem key={id}>
+          <Name>{name}:</Name>
+        <Number>{number}</Number>
 
-          <Button
-            type="button"
+           
+          <IconButton
+            edge="end"
+            aria-label="delete"
             id={id}
             onClick={() => dispatch(removeContact(id))}
           >
-            Delete
-          </Button>
-        </Item>
+            <DeleteIcon />
+          </IconButton>
+        </ListItem>
       ))}
-    </ul>
+          </Grid>
+    </List>
+    </Container>
   );
 };

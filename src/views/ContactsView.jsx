@@ -1,19 +1,19 @@
 import ContactForm from "../Components/Form/Form";
 import { ContactList } from "Components/ContactList/ContactList";
 import Filter from "../Components/Filter/Filter";
-import { Toaster } from 'react-hot-toast';
-import "./styles/Contacts.css";
+import { Container } from "./styles/Contacts.styled";
+import Typography from '@mui/material/Typography';
 
 const ContactsView = () => {
     return (
-        <div className="Contacts">
-            <h1>Phonebook</h1>
+        <Container>
             <ContactForm />
-            <h2>Contacts</h2>
+            <Typography component="h1" variant="h5">
+          Contacts
+        </Typography>
             <Filter />
             <ContactList />
-            <Toaster />
-        </div>
+        </Container>
     )
 };
 
