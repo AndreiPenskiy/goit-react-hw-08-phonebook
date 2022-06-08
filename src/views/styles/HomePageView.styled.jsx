@@ -11,6 +11,7 @@ export const HomePageContainer = styled.div`
 export const WelcomeMessage = styled.h1`
 color: rgb(3, 155, 229);
     font-size: 60px;
+    font-family: 'Raleway', sans-serif;
     margin-top: 0,
 `
 
@@ -36,8 +37,10 @@ position: relative;
 `
 
 export const TextContainer = styled.div`
-font-size: 24px;
+font-size: 22px;
+font-family: 'Roboto', sans-serif;
 `
 export const Text = styled.p`
 font-size: 22px;
+font-family: 'Roboto', sans-serif;
 `

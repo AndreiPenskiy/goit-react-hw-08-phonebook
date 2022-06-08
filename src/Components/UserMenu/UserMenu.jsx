@@ -30,7 +30,7 @@ export const UserMenu = () => {
         alignItems: 'center',
       }}
     >
-      <Typography component="h4">{name}</Typography>
+      <Typography component="h4" sx={{fontfamily: 'Raleway',}}>{name}</Typography>
       {isLoggedIn && (
         <div>
           <IconButton

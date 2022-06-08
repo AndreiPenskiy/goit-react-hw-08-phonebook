@@ -15,7 +15,9 @@ const HeaderAppBar = () => {
 
   return (
     <>
-      <AppBar position="sticky" component="header">
+      <AppBar position="sticky" component="header" sx={{
+        fontfamily: 'Raleway',
+      }}>
         <Container maxWidth={'sm'}>
           <Toolbar disableGutters aria-label="ToolBar"
             sx={{
